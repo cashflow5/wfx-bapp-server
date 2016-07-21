@@ -1,0 +1,38 @@
+@mixin box-sizing ($value: border-box) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	-ms-box-sizing: $value;
+	-o-box-sizing: $value;
+	box-sizing: $value;
+}
+
+@mixin opacity($opvalue: 1) {
+	-webkit-opacity: $opvalue;
+	-moz-opacity: $opvalue;
+	-ms-opacity: $opvalue;
+	-o-opacity: $opvalue;
+	opacity: $opvalue;
+}
+
+@mixin border-radius($rdvalue: 50px){
+	-webkit-border-radius: $rdvalue;
+	-moz-border-radius: $rdvalue;
+	border-radius: $rdvalue;
+}
+
+@mixin animate-rotate($opts:rotate(180deg)){
+	@include transition(all 0.3s ease-in-out);
+	&.active {
+		@include transform($opts);
+	}
+}
+
+@mixin text-overflow($overheight: 30px, $webkit-line: 2){
+    max-height: $overheight;					
+	color: $c-black-0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $webkit-line;
+    -webkit-box-orient: vertical;
+}

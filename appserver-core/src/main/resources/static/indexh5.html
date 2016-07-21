@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>优购商城微分销</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="优购商城微分销">
+    <meta name="author" content="LiZhaowei">
+
+    <!-- The styles -->
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='bootstrap/css/bootstrap-theme.min.css' rel='stylesheet'>
+
+    <!-- jQuery -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="container" id="SM">
+    <div class="row text-center " style="height:50px;margin-top: 20px;">
+        <div class="span4 col-xs-4">
+            Setting
+        </div>
+        <div class="span4 col-xs-4">
+            分销中心
+        </div>
+        <div class="span4 col-xs-4">
+            ...
+        </div>
+    </div>
+    <div class="row" id="mainPanel">
+        <div class="span12">
+            <div class="row">
+                <div class="col-xs-4  span4">
+                    <div class="row">
+                        <div class="span12">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 span4">
+                    <div class="row">
+                        <div class="span12">
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                                    <span class="field pic" name="logo"></span> <br>
+                                    <span class="field" name="name"></span><br>
+                                </div>
+
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-center">
+                                        累计收益
+                                    </h3>
+                                </div>
+                                <div class="panel-body text-center text-center field" name="totalProfit">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4  span4">
+                    <div class="row">
+                        <div class="span12">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-xs-3 span3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title  text-center ">
+                                今日收益
+                            </h3>
+                        </div>
+                        <div class="panel-body field" name="todayProfit">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-xs-3 span3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                今日访客
+                            </h3>
+                        </div>
+                        <div class="panel-body field" name="todayVisitorCount">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-xs-3 span3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                7日订单
+                            </h3>
+                        </div>
+                        <div class="panel-body field" name="sevenDayOrderCount">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-xs-3 span3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">
+                                可提现
+                            </h3>
+                        </div>
+                        <div class="panel-body field" name="canCash">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row  text-center" style="margin: 20px;">
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">商品管理</a>
+
+                </div>
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">我的收益</a>
+
+                </div>
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">选品上架</a>
+
+                </div>
+            </div>
+            <div class="row  text-center" style="margin: 20px;">
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">店铺管理</a>
+
+                </div>
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">下级分销商</a>
+
+                </div>
+                <div class="col-xs-4 span4">
+                    <a href="#" class="btn btn-link btn-block btn-default ">订单管理</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  text-center" style="margin-top: 20px;">
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a href="#">我的</a></li>
+
+            <li><a href="#">店铺</a></li>
+            <li><a href="#">货源</a></li>
+            <li><a href="#">收益</a></li>
+
+        </ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">
+                    登录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="well center login-box">
+                        <div class="alert alert-info" id="loginErrMsg" style="display: none;">
+
+                        </div>
+                        <form class="form-horizontal" action="/userCenter/login" onsubmit="login(this);return false;"
+                              method="post">
+                            <fieldset>
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                                    <input type="text" name="loginName" value="13714407270" class="form-control" placeholder="Username">
+                                </div>
+                                <div class="clearfix"></div>
+                                <br>
+
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                                <div class="clearfix">&nbsp;</div>
+                                <p class="center">
+                                    <button type="submit" class="btn btn-primary">登录</button>
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!--/span-->
+                </div>
+            </div>
+            <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-default"-->
+            <!--data-dismiss="modal">关闭-->
+            <!--</button>-->
+            <!--<button type="button" class="btn btn-primary">-->
+            <!--提交更改-->
+            <!--</button>-->
+            <!--</div>-->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/h5.js"></script>
+<script src="js/jquery.md5.js"></script>
+
+</body>
+</html>

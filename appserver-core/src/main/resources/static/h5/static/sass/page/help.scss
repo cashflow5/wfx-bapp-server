@@ -1,0 +1,56 @@
+$title-pre-size: 18px;
+.yg-help-page {
+    background-color: $c-white-0;
+    .yg-artical {
+        font-size: 1.3rem;
+        h4 {
+            font-size: 1.5rem;
+            line-height: $title-pre-size;
+            color: $c-pink-1;
+            font-weight: normal;
+            &:before {
+                display: inline-block;
+                box-sizing: border-box;
+                padding-top: 2px;
+                margin-right: 10px;
+                width: $title-pre-size;
+                height: $title-pre-size;
+                font-size: 1.3rem;
+                line-height: $title-pre-size;
+                text-align: center;
+                vertical-align: middle;
+                color: white;
+                background-color: #F599A0;
+                border-radius: 50%;
+                content: attr(titleNo);
+            }
+            > * {
+                vertical-align: middle;
+            }
+        }
+        p {
+            margin-bottom: 0;
+            &.first-line {
+                text-indent: 2em;
+            }
+            &.dot-line {
+                padding-left: 17px;
+                &:before {
+                    margin-left: -10px;
+                    padding-right: 5px;
+                    color: $c-pink-1;
+                    content: "\2022";
+                }
+            }
+            &.non-dot {
+                &:before {
+                    padding-left: 6px;
+                    content: "\0020";
+                }
+            }
+        }
+        a.help-link {
+            color: $c-pink-1;
+        }
+    }
+}

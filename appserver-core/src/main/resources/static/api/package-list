@@ -1,0 +1,11 @@
+com.yougou.wfx.appserver.vo
+com.yougou.wfx.appserver.vo.finance
+com.yougou.wfx.appserver.vo.home
+com.yougou.wfx.appserver.vo.login
+com.yougou.wfx.appserver.vo.order
+com.yougou.wfx.appserver.vo.product
+com.yougou.wfx.appserver.vo.seller
+com.yougou.wfx.appserver.vo.shop
+com.yougou.wfx.appserver.vo.supply
+com.yougou.wfx.appserver.vo.upload
+com.yougou.wfx.appserver.vo.version
